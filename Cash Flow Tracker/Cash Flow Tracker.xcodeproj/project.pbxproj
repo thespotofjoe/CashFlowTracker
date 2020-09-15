@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		940F88E725040274005935E0 /* UpdateGoalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940F88E625040274005935E0 /* UpdateGoalController.swift */; };
+		9434B5DA25111F30003DC5E7 /* AddIncomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434B5D925111F30003DC5E7 /* AddIncomeController.swift */; };
 		944507BA250AA8C60027E907 /* CongratulationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944507B9250AA8C60027E907 /* CongratulationsController.swift */; };
 		944507C2250BD68F0027E907 /* FireworkEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 944507C1250BD68F0027E907 /* FireworkEmitter.sks */; };
 		944507C6250BD8BC0027E907 /* FireworkScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 944507C5250BD8BC0027E907 /* FireworkScene.sks */; };
@@ -25,7 +26,6 @@
 		944D15F72502F0E7004AF108 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944D15F62502F0E7004AF108 /* NotificationController.swift */; };
 		944D15F92502F0E7004AF108 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944D15F82502F0E7004AF108 /* ComplicationController.swift */; };
 		944D15FB2502F0E9004AF108 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 944D15FA2502F0E9004AF108 /* Assets.xcassets */; };
-		944D160C2502F188004AF108 /* SetGoalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944D160B2502F188004AF108 /* SetGoalController.swift */; };
 		944D160E2502F19E004AF108 /* CurrentAmountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944D160D2502F19E004AF108 /* CurrentAmountController.swift */; };
 		944D16102502F1B0004AF108 /* AmountLeftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944D160F2502F1B0004AF108 /* AmountLeftController.swift */; };
 		94DF9880250405C900583E10 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DF987F250405C900583E10 /* Utils.swift */; };
@@ -76,6 +76,7 @@
 
 /* Begin PBXFileReference section */
 		940F88E625040274005935E0 /* UpdateGoalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateGoalController.swift; sourceTree = "<group>"; };
+		9434B5D925111F30003DC5E7 /* AddIncomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIncomeController.swift; sourceTree = "<group>"; };
 		944507B9250AA8C60027E907 /* CongratulationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsController.swift; sourceTree = "<group>"; };
 		944507C1250BD68F0027E907 /* FireworkEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireworkEmitter.sks; sourceTree = "<group>"; };
 		944507C5250BD8BC0027E907 /* FireworkScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireworkScene.sks; sourceTree = "<group>"; };
@@ -98,7 +99,6 @@
 		944D15FA2502F0E9004AF108 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		944D15FC2502F0E9004AF108 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		944D15FD2502F0E9004AF108 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		944D160B2502F188004AF108 /* SetGoalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGoalController.swift; sourceTree = "<group>"; };
 		944D160D2502F19E004AF108 /* CurrentAmountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAmountController.swift; sourceTree = "<group>"; };
 		944D160F2502F1B0004AF108 /* AmountLeftController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountLeftController.swift; sourceTree = "<group>"; };
 		94DF987F250405C900583E10 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -169,6 +169,7 @@
 		944D15F12502F0E7004AF108 /* Cash Flow Tracker WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				9434B5D925111F30003DC5E7 /* AddIncomeController.swift */,
 				944D15F42502F0E7004AF108 /* ExtensionDelegate.swift */,
 				944D15F62502F0E7004AF108 /* NotificationController.swift */,
 				944D15F82502F0E7004AF108 /* ComplicationController.swift */,
@@ -176,7 +177,6 @@
 				944D15FC2502F0E9004AF108 /* Info.plist */,
 				944D15FD2502F0E9004AF108 /* PushNotificationPayload.apns */,
 				940F88E625040274005935E0 /* UpdateGoalController.swift */,
-				944D160B2502F188004AF108 /* SetGoalController.swift */,
 				944D160D2502F19E004AF108 /* CurrentAmountController.swift */,
 				944D160F2502F1B0004AF108 /* AmountLeftController.swift */,
 				94DF987F250405C900583E10 /* Utils.swift */,
@@ -264,7 +264,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 944D15C52502F0E3004AF108 /* Build configuration list for PBXProject "Daily Goal Tracker" */;
+			buildConfigurationList = 944D15C52502F0E3004AF108 /* Build configuration list for PBXProject "Cash Flow Tracker" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -339,7 +339,7 @@
 				944D160E2502F19E004AF108 /* CurrentAmountController.swift in Sources */,
 				944D15F92502F0E7004AF108 /* ComplicationController.swift in Sources */,
 				944D15F52502F0E7004AF108 /* ExtensionDelegate.swift in Sources */,
-				944D160C2502F188004AF108 /* SetGoalController.swift in Sources */,
+				9434B5DA25111F30003DC5E7 /* AddIncomeController.swift in Sources */,
 				940F88E725040274005935E0 /* UpdateGoalController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -622,7 +622,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		944D15C52502F0E3004AF108 /* Build configuration list for PBXProject "Daily Goal Tracker" */ = {
+		944D15C52502F0E3004AF108 /* Build configuration list for PBXProject "Cash Flow Tracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				944D15FE2502F0E9004AF108 /* Debug */,

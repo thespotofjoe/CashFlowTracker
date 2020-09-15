@@ -1,62 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16097.3" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Cjd-q4-7Kg">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16097.3" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
     </dependencies>
     <scenes>
-        <!--SetGoalController-->
+        <!--AddIncomeController-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="SetGoalController" id="AgC-eL-Hgc" customClass="SetGoalController" customModule="Daily_Goal_Tracker_WatchKit_Extension">
+                <controller identifier="AddIncomeController" id="AgC-eL-Hgc" customClass="AddIncomeController" customModule="Cash_Flow_Tracker_WatchKit_Extension">
                     <items>
-                        <label alignment="center" text="Set Goal" id="NpK-ie-htL"/>
-                        <label alignment="center" verticalAlignment="center" text="$100" id="5hl-gn-JBm">
-                            <fontDescription key="font" type="system" pointSize="30"/>
+                        <label height="20" alignment="center" text="Add New Income" id="NpK-ie-htL">
+                            <fontDescription key="font" type="system" pointSize="13"/>
                         </label>
-                        <group width="1" alignment="center" verticalAlignment="bottom" id="sY8-wL-xB1">
+                        <label alignment="center" text="$0" id="5hl-gn-JBm">
+                            <fontDescription key="font" type="system" pointSize="24"/>
+                        </label>
+                        <group width="1" alignment="center" id="sY8-wL-xB1">
                             <items>
-                                <button width="0.5" height="25" alignment="center" verticalAlignment="bottom" title="+$10" id="eW1-8v-cX6">
+                                <button width="0.5" height="20" alignment="center" title="+$10" id="eW1-8v-cX6">
                                     <connections>
                                         <action selector="plus10Pressed" destination="AgC-eL-Hgc" id="UlH-of-doS"/>
                                     </connections>
                                 </button>
-                                <button width="0.5" height="25" alignment="center" verticalAlignment="bottom" title="-$10" id="8N8-1T-95m">
+                                <button width="0.5" height="20" alignment="center" verticalAlignment="bottom" title="-$10" id="8N8-1T-95m">
                                     <connections>
                                         <action selector="minus10Pressed" destination="AgC-eL-Hgc" id="nFy-Gh-4iz"/>
                                     </connections>
                                 </button>
                             </items>
                         </group>
-                        <group width="1" alignment="center" verticalAlignment="bottom" id="Hgm-cf-flw">
+                        <group width="1" alignment="center" id="Hgm-cf-flw">
                             <items>
-                                <button width="0.5" height="25" alignment="center" verticalAlignment="bottom" title="+$5" id="CCr-iX-kdi">
+                                <button width="0.5" height="20" alignment="center" verticalAlignment="bottom" title="+$5" id="CCr-iX-kdi">
                                     <connections>
                                         <action selector="plus5Pressed" destination="AgC-eL-Hgc" id="AIP-Pj-gCN"/>
                                     </connections>
                                 </button>
-                                <button width="0.5" height="25" alignment="center" verticalAlignment="bottom" title="-$5" id="15M-89-Yhk">
+                                <button width="0.5" height="20" alignment="center" verticalAlignment="bottom" title="-$5" id="15M-89-Yhk">
                                     <connections>
                                         <action selector="minus5Pressed" destination="AgC-eL-Hgc" id="tnZ-YB-Abk"/>
                                     </connections>
                                 </button>
                             </items>
                         </group>
-                        <group width="1" alignment="center" verticalAlignment="bottom" id="Zcq-T1-H7E">
+                        <group width="1" alignment="center" id="Zcq-T1-H7E">
                             <items>
-                                <button width="0.5" height="25" alignment="center" verticalAlignment="bottom" title="+$1" id="aqm-y4-DNX">
+                                <button width="0.5" height="20" alignment="center" verticalAlignment="bottom" title="+$1" id="aqm-y4-DNX">
                                     <connections>
                                         <action selector="plus1Pressed" destination="AgC-eL-Hgc" id="smI-wi-g4f"/>
                                     </connections>
                                 </button>
-                                <button width="0.5" height="25" alignment="center" verticalAlignment="bottom" title="-$1" id="wFT-XT-VOF">
+                                <button width="0.5" height="20" alignment="center" verticalAlignment="bottom" title="-$1" id="wFT-XT-VOF">
                                     <connections>
                                         <action selector="minus1Pressed" destination="AgC-eL-Hgc" id="Q5k-HM-gGW"/>
                                     </connections>
                                 </button>
                             </items>
                         </group>
+                        <button width="1" height="22" alignment="left" title="Add Income" id="NDy-qK-0IN">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" red="0.066086962670261387" green="0.36945433937823835" blue="0.0089134063506298017" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </button>
                     </items>
                     <connections>
                         <outlet property="goalLabel" destination="5hl-gn-JBm" id="wn1-fY-F5A"/>
@@ -75,7 +81,7 @@
         <!--CongratulationsController-->
         <scene sceneID="g22-83-PVT">
             <objects>
-                <controller identifier="CongratulationsController" hidesWhenLoading="NO" id="Cdh-F0-hLZ" customClass="CongratulationsController" customModule="Daily_Goal_Tracker_WatchKit_App" customModuleProvider="target">
+                <controller identifier="CongratulationsController" hidesWhenLoading="NO" id="Cdh-F0-hLZ" customClass="CongratulationsController" customModule="Cash_Flow_Tracker_WatchKit_App" customModuleProvider="target">
                     <items>
                         <spriteKitScene alignment="left" semanticContentAttribute="playback" scene="FireworkScene.sks" id="9bB-KQ-V74"/>
                         <button width="1" alignment="center" verticalAlignment="bottom" title="Done" id="kk1-2r-RJn">
@@ -94,64 +100,62 @@
         <!--CurrentAmountController-->
         <scene sceneID="XKa-V5-V0X">
             <objects>
-                <controller identifier="CurrentAmountController" id="unJ-hf-gK7" customClass="CurrentAmountController" customModule="Daily_Goal_Tracker_WatchKit_App" customModuleProvider="target">
+                <controller identifier="CurrentAmountController" id="unJ-hf-gK7" customClass="CurrentAmountController" customModule="Cash_Flow_Tracker_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label alignment="center" text="Current $$$" id="Rsz-zc-CeE"/>
-                        <label alignment="center" verticalAlignment="center" text="$0" id="weC-ZR-VjV">
-                            <fontDescription key="font" type="system" pointSize="30"/>
+                        <label height="20" alignment="center" text="Add New Expense" id="3Vk-Nq-ArU">
+                            <fontDescription key="font" type="system" pointSize="13"/>
                         </label>
-                        <group width="1" alignment="center" verticalAlignment="bottom" id="GFI-eu-sHO">
+                        <label alignment="center" text="$0" id="pkw-p2-Nlj">
+                            <fontDescription key="font" type="system" pointSize="24"/>
+                        </label>
+                        <group width="1" alignment="center" id="Ira-vI-El1">
                             <items>
-                                <button width="0.5" height="25" alignment="center" verticalAlignment="bottom" title="+$10" id="M1c-LR-Hg3">
+                                <button width="0.5" height="20" alignment="center" title="+$10" id="HB9-lu-IOB">
                                     <connections>
-                                        <action selector="plus10Pressed" destination="unJ-hf-gK7" id="8Uz-Vq-drD"/>
+                                        <action selector="plus10Pressed" destination="AgC-eL-Hgc" id="udK-v9-x0v"/>
                                     </connections>
                                 </button>
-                                <button width="0.5" height="25" alignment="center" verticalAlignment="bottom" title="-$10" id="SQz-Mj-rmt">
+                                <button width="0.5" height="20" alignment="center" verticalAlignment="bottom" title="-$10" id="SEM-LT-3bL">
                                     <connections>
-                                        <action selector="minus10Pressed" destination="unJ-hf-gK7" id="0MB-qb-G8X"/>
+                                        <action selector="minus10Pressed" destination="AgC-eL-Hgc" id="9Ms-wr-dMF"/>
                                     </connections>
                                 </button>
                             </items>
                         </group>
-                        <group width="1" alignment="center" verticalAlignment="bottom" id="XLa-51-2K2">
+                        <group width="1" alignment="center" id="6EY-xS-uZb">
                             <items>
-                                <button width="0.5" height="25" alignment="center" verticalAlignment="bottom" title="+$5" id="t7A-xR-7F1">
+                                <button width="0.5" height="20" alignment="center" verticalAlignment="bottom" title="+$5" id="oXA-3W-6rt">
                                     <connections>
-                                        <action selector="plus5Pressed" destination="unJ-hf-gK7" id="b6V-Ze-5BK"/>
+                                        <action selector="plus5Pressed" destination="AgC-eL-Hgc" id="swR-y6-r1I"/>
                                     </connections>
                                 </button>
-                                <button width="0.5" height="25" alignment="center" verticalAlignment="bottom" title="-$5" id="ML2-hE-55y">
+                                <button width="0.5" height="20" alignment="center" verticalAlignment="bottom" title="-$5" id="cAa-So-r3z">
                                     <connections>
-                                        <action selector="minus5Pressed" destination="unJ-hf-gK7" id="B5A-6e-ufG"/>
+                                        <action selector="minus5Pressed" destination="AgC-eL-Hgc" id="p4z-ZU-iPI"/>
                                     </connections>
                                 </button>
                             </items>
                         </group>
-                        <group width="1" alignment="center" verticalAlignment="bottom" id="c5R-b0-PnP">
+                        <group width="1" alignment="center" id="X0y-rp-YAs">
                             <items>
-                                <button width="0.5" height="25" alignment="center" verticalAlignment="bottom" title="+$1" id="GmH-dg-iGX">
+                                <button width="0.5" height="20" alignment="center" verticalAlignment="bottom" title="+$1" id="XSE-W6-8Ud">
                                     <connections>
-                                        <action selector="plus1Pressed" destination="unJ-hf-gK7" id="SV7-1Q-KBn"/>
+                                        <action selector="plus1Pressed" destination="AgC-eL-Hgc" id="NnK-kk-qQn"/>
                                     </connections>
                                 </button>
-                                <button width="0.5" height="25" alignment="center" verticalAlignment="bottom" title="-$1" id="Prx-7y-uyx">
+                                <button width="0.5" height="20" alignment="center" verticalAlignment="bottom" title="-$1" id="29S-8p-Coa">
                                     <connections>
-                                        <action selector="minus1Pressed" destination="unJ-hf-gK7" id="2Wp-6u-3Ow"/>
+                                        <action selector="minus1Pressed" destination="AgC-eL-Hgc" id="MIg-bb-U0G"/>
                                     </connections>
                                 </button>
                             </items>
                         </group>
+                        <button width="1" height="22" alignment="left" title="Add Expense" id="qZW-hF-gu8">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" red="0.36945433937823835" green="0.044603948816437845" blue="0.043714264641888753" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </button>
                     </items>
                     <connections>
-                        <outlet property="currentAmountLabel" destination="weC-ZR-VjV" id="CQV-aJ-qhF"/>
-                        <outlet property="currentAmountUnitsLabel" destination="Rsz-zc-CeE" id="vUI-Lf-b4C"/>
-                        <outlet property="minus10Button" destination="SQz-Mj-rmt" id="tOM-sr-JSX"/>
-                        <outlet property="minus1Button" destination="Prx-7y-uyx" id="leb-RP-o3n"/>
-                        <outlet property="minus5Button" destination="ML2-hE-55y" id="Wzj-vQ-Ejd"/>
-                        <outlet property="plus10Button" destination="M1c-LR-Hg3" id="6Xn-KA-bBB"/>
-                        <outlet property="plus1Button" destination="GmH-dg-iGX" id="p3L-Uc-gDx"/>
-                        <outlet property="plus5Button" destination="t7A-xR-7F1" id="swz-kn-BP6"/>
                         <segue destination="wBD-5O-xfh" kind="relationship" relationship="nextPage" id="jG3-ON-C3i"/>
                     </connections>
                 </controller>
@@ -163,11 +167,11 @@
             <objects>
                 <controller identifier="AmountLeftController" id="wBD-5O-xfh" customClass="AmountLeftController" customModule="Daily_Goal_Tracker_WatchKit_Extension">
                     <items>
-                        <label alignment="center" text="$$$ Left" id="cHW-k3-XGS"/>
+                        <label alignment="center" text="Cash Flow" id="cHW-k3-XGS"/>
                         <label alignment="center" verticalAlignment="center" text="$0" id="s78-Nb-wwK">
                             <fontDescription key="font" type="system" pointSize="40"/>
                         </label>
-                        <button width="1" alignment="center" verticalAlignment="bottom" title="Reset" id="rx5-i8-pFx">
+                        <button width="1" height="58" alignment="center" verticalAlignment="bottom" title="Reset" id="rx5-i8-pFx">
                             <connections>
                                 <action selector="resetPressed" destination="wBD-5O-xfh" id="VLM-8C-Sqt"/>
                             </connections>
@@ -180,25 +184,6 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="653" y="-71"/>
-        </scene>
-        <!--UpdateDataController-->
-        <scene sceneID="okt-8a-vwP">
-            <objects>
-                <controller identifier="UpdateDataController" id="Cjd-q4-7Kg" customClass="UpdateDataController" customModule="Daily_Goal_Tracker_WatchKit_App" customModuleProvider="target">
-                    <items>
-                        <button width="1" alignment="center" verticalAlignment="center" title="Update Data from Phone" id="JeA-5K-5i3">
-                            <fontDescription key="font" type="system" pointSize="17"/>
-                            <connections>
-                                <action selector="updateData" destination="Cjd-q4-7Kg" id="oMS-rt-Qkr"/>
-                            </connections>
-                        </button>
-                    </items>
-                    <connections>
-                        <segue destination="AgC-eL-Hgc" kind="relationship" relationship="nextPage" id="eaB-Th-VUV"/>
-                    </connections>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="-37" y="-71"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -220,14 +205,14 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Daily_Goal_Tracker_WatchKit_App" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Cash_Flow_Tracker_WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="Niz-AI-uX2">
             <objects>
-                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="Daily_Goal_Tracker_WatchKit_App" customModuleProvider="target"/>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="Cash_Flow_Tracker_WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="345"/>
         </scene>
