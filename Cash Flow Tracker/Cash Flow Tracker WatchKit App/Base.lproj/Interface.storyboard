@@ -9,7 +9,7 @@
         <!--AddIncomeController-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="AddIncomeController" id="AgC-eL-Hgc" customClass="AddIncomeController" customModule="Cash_Flow_Tracker_WatchKit_Extension">
+                <controller identifier="AddIncomeController" id="AgC-eL-Hgc" customClass="AddIncomeController" customModule="Cash_Flow_Tracker_WatchKit_App" customModuleProvider="target">
                     <items>
                         <label height="20" alignment="center" text="Add New Income" id="NpK-ie-htL">
                             <fontDescription key="font" type="system" pointSize="13"/>
@@ -62,6 +62,9 @@
                         <button width="1" height="22" alignment="left" title="Add Income" id="NDy-qK-0IN">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="backgroundColor" red="0.066086962670261387" green="0.36945433937823835" blue="0.0089134063506298017" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="addEntry" destination="AgC-eL-Hgc" id="3DD-yl-ZRZ"/>
+                            </connections>
                         </button>
                     </items>
                     <connections>
@@ -97,27 +100,27 @@
             </objects>
             <point key="canvasLocation" x="305" y="-385"/>
         </scene>
-        <!--CurrentAmountController-->
+        <!--AddExpenseController-->
         <scene sceneID="XKa-V5-V0X">
             <objects>
-                <controller identifier="CurrentAmountController" id="unJ-hf-gK7" customClass="CurrentAmountController" customModule="Cash_Flow_Tracker_WatchKit_App" customModuleProvider="target">
+                <controller identifier="AddExpenseController" id="unJ-hf-gK7" customClass="AddExpenseController" customModule="Cash_Flow_Tracker_WatchKit_App" customModuleProvider="target">
                     <items>
                         <label height="20" alignment="center" text="Add New Expense" id="3Vk-Nq-ArU">
                             <fontDescription key="font" type="system" pointSize="13"/>
                         </label>
-                        <label alignment="center" text="$0" id="pkw-p2-Nlj">
+                        <label alignment="center" text="-$0" id="pkw-p2-Nlj">
                             <fontDescription key="font" type="system" pointSize="24"/>
                         </label>
                         <group width="1" alignment="center" id="Ira-vI-El1">
                             <items>
                                 <button width="0.5" height="20" alignment="center" title="+$10" id="HB9-lu-IOB">
                                     <connections>
-                                        <action selector="plus10Pressed" destination="AgC-eL-Hgc" id="udK-v9-x0v"/>
+                                        <action selector="plus10Pressed" destination="unJ-hf-gK7" id="oOL-c6-vpP"/>
                                     </connections>
                                 </button>
                                 <button width="0.5" height="20" alignment="center" verticalAlignment="bottom" title="-$10" id="SEM-LT-3bL">
                                     <connections>
-                                        <action selector="minus10Pressed" destination="AgC-eL-Hgc" id="9Ms-wr-dMF"/>
+                                        <action selector="minus10Pressed" destination="unJ-hf-gK7" id="ix2-d3-wrQ"/>
                                     </connections>
                                 </button>
                             </items>
@@ -126,12 +129,12 @@
                             <items>
                                 <button width="0.5" height="20" alignment="center" verticalAlignment="bottom" title="+$5" id="oXA-3W-6rt">
                                     <connections>
-                                        <action selector="plus5Pressed" destination="AgC-eL-Hgc" id="swR-y6-r1I"/>
+                                        <action selector="plus5Pressed" destination="unJ-hf-gK7" id="0xX-q1-tW0"/>
                                     </connections>
                                 </button>
                                 <button width="0.5" height="20" alignment="center" verticalAlignment="bottom" title="-$5" id="cAa-So-r3z">
                                     <connections>
-                                        <action selector="minus5Pressed" destination="AgC-eL-Hgc" id="p4z-ZU-iPI"/>
+                                        <action selector="minus5Pressed" destination="unJ-hf-gK7" id="MDk-aP-ASI"/>
                                     </connections>
                                 </button>
                             </items>
@@ -140,12 +143,12 @@
                             <items>
                                 <button width="0.5" height="20" alignment="center" verticalAlignment="bottom" title="+$1" id="XSE-W6-8Ud">
                                     <connections>
-                                        <action selector="plus1Pressed" destination="AgC-eL-Hgc" id="NnK-kk-qQn"/>
+                                        <action selector="plus1Pressed" destination="unJ-hf-gK7" id="OCF-Im-vsG"/>
                                     </connections>
                                 </button>
                                 <button width="0.5" height="20" alignment="center" verticalAlignment="bottom" title="-$1" id="29S-8p-Coa">
                                     <connections>
-                                        <action selector="minus1Pressed" destination="AgC-eL-Hgc" id="MIg-bb-U0G"/>
+                                        <action selector="minus1Pressed" destination="unJ-hf-gK7" id="VU4-wo-K0s"/>
                                     </connections>
                                 </button>
                             </items>
@@ -153,9 +156,13 @@
                         <button width="1" height="22" alignment="left" title="Add Expense" id="qZW-hF-gu8">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="backgroundColor" red="0.36945433937823835" green="0.044603948816437845" blue="0.043714264641888753" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="addEntry" destination="unJ-hf-gK7" id="W7g-zZ-W2D"/>
+                            </connections>
                         </button>
                     </items>
                     <connections>
+                        <outlet property="amountLabel" destination="pkw-p2-Nlj" id="VPh-KU-mWh"/>
                         <segue destination="wBD-5O-xfh" kind="relationship" relationship="nextPage" id="jG3-ON-C3i"/>
                     </connections>
                 </controller>

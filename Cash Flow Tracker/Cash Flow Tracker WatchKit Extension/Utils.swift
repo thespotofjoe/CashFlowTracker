@@ -19,14 +19,14 @@ class Entry
     /* Properties */
     // $$$ amount in this Entry
     var amount: Float
-    // String holding dollar sign in front of the amount with 2 decimal places
-    var amountString: String { return "$\(String(format: "%.2f", amount))" }
+    // String holding dollar sign in front of the amount with 2 decimal places, if it's an expense, put a negative sign in front of it and negate the negative in the amount
+    var amountString: String { return (entryType == .Expense) ? "-$\(String(format: "%.2f", -amount))" : "$\(String(format: "%.2f", amount))" }
     
     // Is this an expense or income?
     var entryType: EntryType
     
     // Full initializer
-    init (amount: Float)
+    init (_ amount: Float)
     {
         // Set self.amount to passed value
         self.amount = amount

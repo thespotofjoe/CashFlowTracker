@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		940F88E725040274005935E0 /* UpdateGoalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940F88E625040274005935E0 /* UpdateGoalController.swift */; };
 		9434B5DA25111F30003DC5E7 /* AddIncomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434B5D925111F30003DC5E7 /* AddIncomeController.swift */; };
+		9434B5DC25128B95003DC5E7 /* AddExpenseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434B5DB25128B95003DC5E7 /* AddExpenseController.swift */; };
 		944507BA250AA8C60027E907 /* CongratulationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944507B9250AA8C60027E907 /* CongratulationsController.swift */; };
 		944507C2250BD68F0027E907 /* FireworkEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 944507C1250BD68F0027E907 /* FireworkEmitter.sks */; };
 		944507C6250BD8BC0027E907 /* FireworkScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 944507C5250BD8BC0027E907 /* FireworkScene.sks */; };
@@ -77,6 +78,7 @@
 /* Begin PBXFileReference section */
 		940F88E625040274005935E0 /* UpdateGoalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateGoalController.swift; sourceTree = "<group>"; };
 		9434B5D925111F30003DC5E7 /* AddIncomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIncomeController.swift; sourceTree = "<group>"; };
+		9434B5DB25128B95003DC5E7 /* AddExpenseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseController.swift; sourceTree = "<group>"; };
 		944507B9250AA8C60027E907 /* CongratulationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsController.swift; sourceTree = "<group>"; };
 		944507C1250BD68F0027E907 /* FireworkEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireworkEmitter.sks; sourceTree = "<group>"; };
 		944507C5250BD8BC0027E907 /* FireworkScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireworkScene.sks; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				9434B5D925111F30003DC5E7 /* AddIncomeController.swift */,
+				9434B5DB25128B95003DC5E7 /* AddExpenseController.swift */,
 				944D15F42502F0E7004AF108 /* ExtensionDelegate.swift */,
 				944D15F62502F0E7004AF108 /* NotificationController.swift */,
 				944D15F82502F0E7004AF108 /* ComplicationController.swift */,
@@ -336,6 +339,7 @@
 				944507BA250AA8C60027E907 /* CongratulationsController.swift in Sources */,
 				944D16102502F1B0004AF108 /* AmountLeftController.swift in Sources */,
 				94DF9881250405C900583E10 /* Utils.swift in Sources */,
+				9434B5DC25128B95003DC5E7 /* AddExpenseController.swift in Sources */,
 				944D160E2502F19E004AF108 /* CurrentAmountController.swift in Sources */,
 				944D15F92502F0E7004AF108 /* ComplicationController.swift in Sources */,
 				944D15F52502F0E7004AF108 /* ExtensionDelegate.swift in Sources */,

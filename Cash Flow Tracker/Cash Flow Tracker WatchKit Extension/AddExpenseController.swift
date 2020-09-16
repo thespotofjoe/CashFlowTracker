@@ -1,15 +1,15 @@
 //
-//  AddIncomeController.swift
+//  AddExpenseController.swift
 //  Daily Goal Tracker WatchKit Extension
 //
-//  Created by Joseph Buchoff on 9/15/20.
+//  Created by Joseph Buchoff on 9/16/20.
 //  Copyright © 2020 Joe's Studio. All rights reserved.
 //
 
 import WatchKit
 import Foundation
 
-class AddIncomeController: WKInterfaceController
+class AddExpenseController: WKInterfaceController
 {
 
     // Label outlet
@@ -33,20 +33,20 @@ class AddIncomeController: WKInterfaceController
     func reset()
     {
         amount = 0
-        amountLabel.setText("$0")
+        amountLabel.setText("-$0")
     }
     
-    // Updates local amount with change
+    // Updates local amount with change, subtracting it since it's the expenses screen
     func updateAmount(_ change: Int)
     {
         // Make change.
-        amount += change
+        amount -= change
         
-        // Make sure this is above 0. We're on the income screen right now, not the expense screen.
-        if amount < 0 { amount = 0 }
+        // Make sure this is below 0. We're on the income screen right now, not the expense screen.
+        if amount > 0 { amount = 0 }
         
         // Update the label to reflect change for the user.
-        amountLabel.setText("$\(amount)")
+        amountLabel.setText("-$\(-amount)")
     }
     
     // Creates and spits back an Entry from the local amount
