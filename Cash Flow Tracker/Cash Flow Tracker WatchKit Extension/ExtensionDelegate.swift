@@ -12,7 +12,7 @@ import WatchConnectivity
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidFinishLaunching() {
-        // Perform any final initialization of your application.
+        // Setup connection to iPhone app
         if WCSession.isSupported()
         {
             let session = WCSession.default

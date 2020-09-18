@@ -58,18 +58,6 @@ class AddExpenseController: WKInterfaceController
         super.awake(withContext: context)
     }
     
-    override func willActivate()
-    {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-    }
-    
-    override func didDeactivate()
-    {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
-    }
-    
     @IBAction func plus10Pressed()
     {
         updateAmount(10)

@@ -26,6 +26,7 @@ class ViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
         /* Do any additional setup after loading the view. */
         // Update Date Label
         // Get right now's epochtime

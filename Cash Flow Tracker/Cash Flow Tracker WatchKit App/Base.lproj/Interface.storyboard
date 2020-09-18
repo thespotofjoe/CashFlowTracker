@@ -81,25 +81,6 @@
             </objects>
             <point key="canvasLocation" x="190" y="-71"/>
         </scene>
-        <!--CongratulationsController-->
-        <scene sceneID="g22-83-PVT">
-            <objects>
-                <controller identifier="CongratulationsController" hidesWhenLoading="NO" id="Cdh-F0-hLZ" customClass="CongratulationsController" customModule="Cash_Flow_Tracker_WatchKit_App" customModuleProvider="target">
-                    <items>
-                        <spriteKitScene alignment="left" semanticContentAttribute="playback" scene="FireworkScene.sks" id="9bB-KQ-V74"/>
-                        <button width="1" alignment="center" verticalAlignment="bottom" title="Done" id="kk1-2r-RJn">
-                            <connections>
-                                <action selector="goBack" destination="Cdh-F0-hLZ" id="6a9-t2-OcC"/>
-                            </connections>
-                        </button>
-                    </items>
-                    <connections>
-                        <outlet property="congratulationsScene" destination="9bB-KQ-V74" id="Mjs-py-aK5"/>
-                    </connections>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="305" y="-385"/>
-        </scene>
         <!--AddExpenseController-->
         <scene sceneID="XKa-V5-V0X">
             <objects>
@@ -169,24 +150,22 @@
             </objects>
             <point key="canvasLocation" x="419" y="-71"/>
         </scene>
-        <!--AmountLeftController-->
+        <!--CashFlowController-->
         <scene sceneID="mAo-40-Zic">
             <objects>
-                <controller identifier="AmountLeftController" id="wBD-5O-xfh" customClass="AmountLeftController" customModule="Daily_Goal_Tracker_WatchKit_Extension">
+                <controller identifier="CashFlowController" id="wBD-5O-xfh" customClass="CashFlowController" customModule="Cash_Flow_Tracker_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label alignment="center" text="Cash Flow" id="cHW-k3-XGS"/>
+                        <label width="1" alignment="center" text="1/1/2020" textAlignment="center" id="lUw-Bz-uNV"/>
+                        <label width="1" alignment="center" text="Cash Flow" textAlignment="center" id="cHW-k3-XGS"/>
                         <label alignment="center" verticalAlignment="center" text="$0" id="s78-Nb-wwK">
                             <fontDescription key="font" type="system" pointSize="40"/>
                         </label>
-                        <button width="1" height="58" alignment="center" verticalAlignment="bottom" title="Reset" id="rx5-i8-pFx">
-                            <connections>
-                                <action selector="resetPressed" destination="wBD-5O-xfh" id="VLM-8C-Sqt"/>
-                            </connections>
-                        </button>
                     </items>
                     <connections>
                         <outlet property="amountLeftLabel" destination="s78-Nb-wwK" id="YTc-ra-Poe"/>
                         <outlet property="amountLeftUnitsLabel" destination="cHW-k3-XGS" id="NqE-kD-iVh"/>
+                        <outlet property="cashFlowLabel" destination="s78-Nb-wwK" id="xx8-Rm-qx2"/>
+                        <outlet property="dateLabel" destination="lUw-Bz-uNV" id="oqa-uv-imU"/>
                     </connections>
                 </controller>
             </objects>
