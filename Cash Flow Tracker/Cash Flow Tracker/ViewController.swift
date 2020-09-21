@@ -22,6 +22,11 @@ class ViewController: UIViewController
     
     @IBOutlet weak var moneyOutTextField: UITextField!
     
+    /* Our Variables */
+    var totalIncome = 0
+    var totalExpenses = 0
+    var cashFlow: Int { return totalIncome - totalExpenses }
+    
     /* Overridden System Functions */
     override func viewDidLoad()
     {
@@ -68,17 +73,20 @@ class ViewController: UIViewController
 
 extension ViewController: WCSessionDelegate, UITableViewDelegate, UITableViewDataSource
 {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
         <#code#>
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
         <#code#>
     }
     
     /* Protocol functions */
     // WCSessionDelegate functions
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?)
+    {
         
     }
     
@@ -94,10 +102,8 @@ extension ViewController: WCSessionDelegate, UITableViewDelegate, UITableViewDat
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Swift.Void)
     {
-        goal.updateUnits(unitsField.text)
-        
         print("Received request from Watch. Trying to send dictionary back to Watch.")
-        let returnMessage: [String : Any] = ["units" : goal.units as Any, "format" : goal.format.index()]
+        let returnMessage: [String : Any] = ["cashflow" : cashFlow as Any]
         
         // Send it over to the Apple Watch
         replyHandler(returnMessage)
