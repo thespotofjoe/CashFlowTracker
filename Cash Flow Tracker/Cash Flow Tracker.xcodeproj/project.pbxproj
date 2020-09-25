@@ -26,9 +26,9 @@
 		944D15FB2502F0E9004AF108 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 944D15FA2502F0E9004AF108 /* Assets.xcassets */; };
 		944D160E2502F19E004AF108 /* CurrentAmountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944D160D2502F19E004AF108 /* CurrentAmountController.swift */; };
 		944D16102502F1B0004AF108 /* AmountLeftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944D160F2502F1B0004AF108 /* AmountLeftController.swift */; };
+		94916A4D251D70C400B558BF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94916A4C251D70C400B558BF /* Utils.swift */; };
+		94916A4E251D70C400B558BF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94916A4C251D70C400B558BF /* Utils.swift */; };
 		949437512515539400C4EFDA /* CashFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949437502515539300C4EFDA /* CashFlowController.swift */; };
-		94DF9880250405C900583E10 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DF987F250405C900583E10 /* Utils.swift */; };
-		94DF9881250405C900583E10 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DF987F250405C900583E10 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,8 +98,8 @@
 		944D15FD2502F0E9004AF108 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		944D160D2502F19E004AF108 /* CurrentAmountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAmountController.swift; sourceTree = "<group>"; };
 		944D160F2502F1B0004AF108 /* AmountLeftController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountLeftController.swift; sourceTree = "<group>"; };
+		94916A4C251D70C400B558BF /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		949437502515539300C4EFDA /* CashFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowController.swift; sourceTree = "<group>"; };
-		94DF987F250405C900583E10 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +123,7 @@
 		944D15C12502F0E3004AF108 = {
 			isa = PBXGroup;
 			children = (
+				94916A4C251D70C400B558BF /* Utils.swift */,
 				944D15CC2502F0E3004AF108 /* Cash Flow Tracker */,
 				944D15E22502F0E6004AF108 /* Cash Flow Tracker WatchKit App */,
 				944D15F12502F0E7004AF108 /* Cash Flow Tracker WatchKit Extension */,
@@ -179,7 +180,6 @@
 				940F88E625040274005935E0 /* UpdateGoalController.swift */,
 				944D160D2502F19E004AF108 /* CurrentAmountController.swift */,
 				944D160F2502F1B0004AF108 /* AmountLeftController.swift */,
-				94DF987F250405C900583E10 /* Utils.swift */,
 			);
 			path = "Cash Flow Tracker WatchKit Extension";
 			sourceTree = "<group>";
@@ -255,6 +255,7 @@
 					};
 					944D15DD2502F0E6004AF108 = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1200;
 					};
 					944D15EC2502F0E7004AF108 = {
 						CreatedOnToolsVersion = 11.6;
@@ -319,7 +320,7 @@
 				944D15D22502F0E3004AF108 /* ViewController.swift in Sources */,
 				944D15CE2502F0E3004AF108 /* AppDelegate.swift in Sources */,
 				944D15D02502F0E3004AF108 /* SceneDelegate.swift in Sources */,
-				94DF9880250405C900583E10 /* Utils.swift in Sources */,
+				94916A4D251D70C400B558BF /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,10 +331,10 @@
 				944D15F72502F0E7004AF108 /* NotificationController.swift in Sources */,
 				944D16102502F1B0004AF108 /* AmountLeftController.swift in Sources */,
 				949437512515539400C4EFDA /* CashFlowController.swift in Sources */,
-				94DF9881250405C900583E10 /* Utils.swift in Sources */,
 				9434B5DC25128B95003DC5E7 /* AddExpenseController.swift in Sources */,
 				944D160E2502F19E004AF108 /* CurrentAmountController.swift in Sources */,
 				944D15F92502F0E7004AF108 /* ComplicationController.swift in Sources */,
+				94916A4E251D70C400B558BF /* Utils.swift in Sources */,
 				944D15F52502F0E7004AF108 /* ExtensionDelegate.swift in Sources */,
 				9434B5DA25111F30003DC5E7 /* AddIncomeController.swift in Sources */,
 				940F88E725040274005935E0 /* UpdateGoalController.swift in Sources */,
@@ -546,14 +547,21 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9PNS76KB97;
 				IBSC_MODULE = Daily_Goal_Tracker_WatchKit_Extension;
 				INFOPLIST_FILE = "Daily Goal Tracker WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "joes.studio.Cash-Flow-Tracker.watchkitapp";
 				PRODUCT_NAME = "Cash Flow Tracker WatchKit App";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 6.2;
@@ -565,10 +573,16 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9PNS76KB97;
 				IBSC_MODULE = Daily_Goal_Tracker_WatchKit_Extension;
 				INFOPLIST_FILE = "Daily Goal Tracker WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "joes.studio.Cash-Flow-Tracker.watchkitapp";
 				PRODUCT_NAME = "Cash Flow Tracker WatchKit App";
 				SDKROOT = watchos;

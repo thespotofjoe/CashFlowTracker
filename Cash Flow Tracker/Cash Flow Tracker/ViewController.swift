@@ -26,6 +26,7 @@ class ViewController: UIViewController
     var totalIncome = 0
     var totalExpenses = 0
     var cashFlow: Int { return totalIncome - totalExpenses }
+    var entries: [String:[Entry]] = ["expenses":[], "income":[]]
     
     /* Overridden System Functions */
     override func viewDidLoad()
@@ -61,12 +62,24 @@ class ViewController: UIViewController
     /* IBAction Functions */
     @IBAction func moneyInAddPressed(_ sender: Any)
     {
+        let amountString = moneyInTextField.text!
+        var amountFloat = Float(amountString)!
         
+        // Make sure it's above 0, since this is income
+        if amountFloat < 0 {amountFloat *= -1}
+        
+        entries["income"]!.append(Entry(amountFloat))
     }
     
     @IBAction func moneyOutAddPressed(_ sender: Any)
     {
+        let amountString = moneyInTextField.text!
+        var amountFloat = Float(amountString)!
         
+        // Make sure it's under 0, since this is an expense
+        if amountFloat > 0 {amountFloat *= -1}
+        
+        entries["expenses"]!.append(Entry(amountFloat))
     }
     
 }

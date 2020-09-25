@@ -1,8 +1,8 @@
 //
 //  Utils.swift
-//  Daily Goal Tracker WatchKit Extension
+//  Cash Flow Tracker
 //
-//  Created by Joseph Buchoff on 9/4/20.
+//  Created by Joseph Buchoff on 9/24/20.
 //  Copyright © 2020 Joe's Studio. All rights reserved.
 //
 
