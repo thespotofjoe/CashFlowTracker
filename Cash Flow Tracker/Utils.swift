@@ -39,4 +39,19 @@ class Entry
             self.entryType = .Income
         }
     }
+    
+    static func + (lhs: Entry, rhs: Entry) -> Float
+    {
+        return lhs.amount + rhs.amount
+    }
+    
+    static func + (lhs: Entry, rhs: Float) -> Float
+    {
+        return lhs.amount + rhs
+    }
+    
+    static func + (lhs: Float, rhs: Entry) -> Float
+    {
+        return lhs + rhs.amount
+    }
 }

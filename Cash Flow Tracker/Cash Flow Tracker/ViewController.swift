@@ -22,11 +22,31 @@ class ViewController: UIViewController
     
     @IBOutlet weak var moneyOutTextField: UITextField!
     
-    /* Our Variables */
-    var totalIncome = 0
-    var totalExpenses = 0
-    var cashFlow: Int { return totalIncome - totalExpenses }
+    /* Our properties */
     var entries: [String:[Entry]] = ["expenses":[], "income":[]]
+    
+    // Computed properties
+    var totalIncome: Float
+    {
+        var total = Float.zero
+        for incomeEntry in entries["income"]!
+        {
+            total = total + incomeEntry
+        }
+        
+        return total
+    }
+    var totalExpenses: Float
+    {
+        var total = Float.zero
+        for incomeEntry in entries["expenses"]!
+        {
+            total = total + incomeEntry
+        }
+        
+        return total
+    }
+    var cashFlow: Float { return totalIncome - totalExpenses }
     
     /* Overridden System Functions */
     override func viewDidLoad()
