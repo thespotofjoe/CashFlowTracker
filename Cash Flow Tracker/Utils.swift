@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum BudgetType
+enum Category
 {
     case Food
     case Gas
@@ -31,23 +31,23 @@ class Budget
     var currAmount = Float.zero
     
     // What category?
-    var type: BudgetType
+    var category: Category
     
     /* Calculated Properties */
     var amountLeft: Float { return amount - currAmount }
     
     // Full initializer with 0 spend so far
-    init (_ amount: Float, type: BudgetType)
+    init (_ amount: Float, category: Category)
     {
         // Set self.amount to passed value
         self.amount = amount
         
         // Set what budget category
-        self.type = type
+        self.category = category
     }
     
     // Full initializer with nonzero spend
-    init (_ amount: Float, currAmount: Float, type: BudgetType)
+    init (_ amount: Float, currAmount: Float, category: Category)
     {
         // Set self.amount to passed value
         self.amount = amount
@@ -56,11 +56,11 @@ class Budget
         self.currAmount = currAmount
         
         // Set what budget category
-        self.type = type
+        self.category = category
     }
     
     // Full initializer with nonzero spend, array of Entries
-    init (_ amount: Float, entries: [Entry], type: BudgetType)
+    init (_ amount: Float, entries: [Entry], category: Category)
     {
         // Set self.amount to passed value
         self.amount = amount
@@ -73,7 +73,7 @@ class Budget
         }
         
         // Set what budget category
-        self.type = type
+        self.category = category
     }
     
     // Add to spend
@@ -124,8 +124,12 @@ class Entry
     // Is this an expense or income?
     var type: EntryType
     
+    // Category
+    var category: Category
+    
+    /* Initializers */
     // Full initializer
-    init (_ amount: Float)
+    init (_ amount: Float, category: Category)
     {
         // Set self.amount to passed value
         self.amount = amount
@@ -139,6 +143,13 @@ class Entry
         }
     }
     
+    /* Our Functions */
+    func changeCategory(to newCategory: Category)
+    {
+        self.category = newCategory
+    }
+    
+    /* Operrator overrides */
     static func + (lhs: Entry, rhs: Entry) -> Float
     {
         return lhs.amount + rhs.amount
