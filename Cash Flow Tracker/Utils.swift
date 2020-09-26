@@ -23,21 +23,87 @@ enum BudgetType
 
 class Budget
 {
-    /* Properties */
+    /* Instance Properties */
     // $$$ amount in this Budget
     var amount: Float
     
-    // Is this an expense or income?
+    // $$$ amount already spent towards this budget
+    var currAmount = Float.zero
+    
+    // What category?
     var type: BudgetType
     
-    // Full initializer
+    /* Calculated Properties */
+    var amountLeft: Float { return amount - currAmount }
+    
+    // Full initializer with 0 spend so far
     init (_ amount: Float, type: BudgetType)
     {
         // Set self.amount to passed value
         self.amount = amount
         
-        // Set whether this is an expense or income
+        // Set what budget category
         self.type = type
+    }
+    
+    // Full initializer with nonzero spend
+    init (_ amount: Float, currAmount: Float, type: BudgetType)
+    {
+        // Set self.amount to passed value
+        self.amount = amount
+        
+        // Set current amount to passed value
+        self.currAmount = currAmount
+        
+        // Set what budget category
+        self.type = type
+    }
+    
+    // Full initializer with nonzero spend, array of Entries
+    init (_ amount: Float, entries: [Entry], type: BudgetType)
+    {
+        // Set self.amount to passed value
+        self.amount = amount
+        
+        // Calculate current amount spent in this budget
+        for entry in entries
+        {
+            // These will be expenses, so subtract the negative to add it to currAmount
+            currAmount -= entry.amount
+        }
+        
+        // Set what budget category
+        self.type = type
+    }
+    
+    // Add to spend
+    func addSpend (_ newSpend: Float)
+    {
+        currAmount += newSpend
+    }
+    
+    // Calculate new spend from an array of entries
+    func addSpend (_ entries: [Entry])
+    {
+        for entry in entries
+        {
+            // These will be expenses, so subtract the negative to add it to currAmount
+            currAmount -= entry.amount
+        }
+    }
+    
+    // Calculate base spend from an array of entries
+    func calcSpend (_ entries: [Entry])
+    {
+        // Reset currAmount
+        currAmount = Float.zero
+        
+        // Calculate total spend in this budget
+        for entry in entries
+        {
+            // These will be expenses, so subtract the negative to add it to currAmount
+            currAmount -= entry.amount
+        }
     }
 }
 
