@@ -22,8 +22,12 @@ class ViewController: UIViewController
     
     @IBOutlet weak var moneyOutTextField: UITextField!
     
+    @IBOutlet weak var categoryPicker: UIPickerView!
+    
     /* Our properties */
     var entries: [String:[Entry]] = ["expenses":[], "income":[]]
+    let categories = ["Food", "Gas", "Gym", "Rent", "Utilities", "Subscriptions", "Toiletries and Cleaning Supplies", "Car Payments", "Car Insurance", "Other"]
+    var selectedCategory = Category.Uncategorized
     
     // Computed properties
     var totalIncome: Float
@@ -92,7 +96,7 @@ class ViewController: UIViewController
         // Make sure it's above 0, since this is income
         if amountFloat < 0 {amountFloat *= -1}
         
-        entries["income"]!.append(Entry(amountFloat, category: .Uncategorized))
+        entries["income"]!.append(Entry(amountFloat, category: selectedCategory))
     }
     
     @IBAction func moneyOutAddPressed(_ sender: Any)
@@ -103,7 +107,7 @@ class ViewController: UIViewController
         // Make sure it's under 0, since this is an expense
         if amountFloat > 0 {amountFloat *= -1}
         
-        entries["expenses"]!.append(Entry(amountFloat, category: .Uncategorized))
+        entries["expenses"]!.append(Entry(amountFloat, category: selectedCategory))
     }
     
     /* Our Functions */
@@ -120,7 +124,7 @@ class ViewController: UIViewController
     
 }
 
-extension ViewController: WCSessionDelegate, UITableViewDelegate, UITableViewDataSource
+extension ViewController: WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -158,5 +162,52 @@ extension ViewController: WCSessionDelegate, UITableViewDelegate, UITableViewDat
         replyHandler(returnMessage)
         
         print("Successfully replied to Watch.")
+    }
+    
+    // UIPickerViewDelegate functions
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+        switch row
+        {
+        case 0:
+            selectedCategory = .Food
+        case 1:
+            selectedCategory = .Gas
+        case 2:
+            selectedCategory = .Gym
+        case 3:
+            selectedCategory = .Rent
+        case 4:
+            selectedCategory = .Utilities
+        case 5:
+            selectedCategory = .Subscriptions
+        case 6:
+            selectedCategory = .Toiletries_and_Cleaning_Supplies
+        case 7:
+            selectedCategory = .Car_Payments
+        case 8:
+            selectedCategory = .Car_Insurance
+        case 9:
+            selectedCategory = .Other
+        default:
+            // Will never get here, but the compiler doesn't know that
+            return
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
+    {
+        return categories[row]
+    }
+    
+    // UIPickerViewDataSource functions
+    func numberOfComponents(in pickerView: UIPickerView) -> Int
+    {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+    {
+        return categories.count
     }
 }

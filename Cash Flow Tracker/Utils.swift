@@ -19,6 +19,8 @@ enum Category
     case Toiletries_and_Cleaning_Supplies
     case Car_Payments
     case Car_Insurance
+    case Other
+    case Uncategorized
 }
 
 class Budget
