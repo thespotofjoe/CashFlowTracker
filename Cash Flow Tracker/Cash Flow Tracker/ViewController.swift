@@ -36,6 +36,7 @@ class ViewController: UIViewController
         
         return total
     }
+    
     var totalExpenses: Float
     {
         var total = Float.zero
@@ -46,7 +47,10 @@ class ViewController: UIViewController
         
         return total
     }
+    
     var cashFlow: Float { return totalIncome - totalExpenses }
+    
+    
     
     /* Overridden System Functions */
     override func viewDidLoad()
@@ -88,7 +92,7 @@ class ViewController: UIViewController
         // Make sure it's above 0, since this is income
         if amountFloat < 0 {amountFloat *= -1}
         
-        entries["income"]!.append(Entry(amountFloat))
+        entries["income"]!.append(Entry(amountFloat, category: .Uncategorized))
     }
     
     @IBAction func moneyOutAddPressed(_ sender: Any)
@@ -99,7 +103,19 @@ class ViewController: UIViewController
         // Make sure it's under 0, since this is an expense
         if amountFloat > 0 {amountFloat *= -1}
         
-        entries["expenses"]!.append(Entry(amountFloat))
+        entries["expenses"]!.append(Entry(amountFloat, category: .Uncategorized))
+    }
+    
+    /* Our Functions */
+    func totalForCategory(_ category: Category) -> Float
+    {
+        var total = Float.zero
+        for expense in entries["expenses"]!
+        {
+            if expense.category == category { total -= expense.amount }
+        }
+        
+        return total
     }
     
 }
