@@ -26,6 +26,7 @@
 		944D15FB2502F0E9004AF108 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 944D15FA2502F0E9004AF108 /* Assets.xcassets */; };
 		944D160E2502F19E004AF108 /* CurrentAmountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944D160D2502F19E004AF108 /* CurrentAmountController.swift */; };
 		944D16102502F1B0004AF108 /* AmountLeftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944D160F2502F1B0004AF108 /* AmountLeftController.swift */; };
+		9474683F2522857D00859144 /* EntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9474683E2522857D00859144 /* EntryCell.swift */; };
 		94916A4D251D70C400B558BF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94916A4C251D70C400B558BF /* Utils.swift */; };
 		94916A4E251D70C400B558BF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94916A4C251D70C400B558BF /* Utils.swift */; };
 		949437512515539400C4EFDA /* CashFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949437502515539300C4EFDA /* CashFlowController.swift */; };
@@ -98,6 +99,7 @@
 		944D15FD2502F0E9004AF108 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		944D160D2502F19E004AF108 /* CurrentAmountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAmountController.swift; sourceTree = "<group>"; };
 		944D160F2502F1B0004AF108 /* AmountLeftController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountLeftController.swift; sourceTree = "<group>"; };
+		9474683E2522857D00859144 /* EntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCell.swift; sourceTree = "<group>"; };
 		94916A4C251D70C400B558BF /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		949437502515539300C4EFDA /* CashFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,6 +153,7 @@
 				944D15D62502F0E6004AF108 /* Assets.xcassets */,
 				944D15D82502F0E6004AF108 /* LaunchScreen.storyboard */,
 				944D15DB2502F0E6004AF108 /* Info.plist */,
+				9474683E2522857D00859144 /* EntryCell.swift */,
 			);
 			path = "Cash Flow Tracker";
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				944D15D22502F0E3004AF108 /* ViewController.swift in Sources */,
+				9474683F2522857D00859144 /* EntryCell.swift in Sources */,
 				944D15CE2502F0E3004AF108 /* AppDelegate.swift in Sources */,
 				944D15D02502F0E3004AF108 /* SceneDelegate.swift in Sources */,
 				94916A4D251D70C400B558BF /* Utils.swift in Sources */,

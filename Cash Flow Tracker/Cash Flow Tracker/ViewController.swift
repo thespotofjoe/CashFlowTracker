@@ -14,13 +14,13 @@ class ViewController: UIViewController
     /* Outlets */
     @IBOutlet weak var dateLabel: UILabel!
     
-    @IBOutlet weak var moneyInTableView: UITableView!
+    @IBOutlet weak var entryTableView: UITableView!
     
-    @IBOutlet weak var moneyInTextField: UITextField!
+    @IBOutlet weak var amountTextField: UITextField!
     
-    @IBOutlet weak var moneyOutTableView: UITableView!
+    @IBOutlet weak var descriptionTextField: UITextField!
     
-    @IBOutlet weak var moneyOutTextField: UITextField!
+    @IBOutlet weak var expenseOrIncome: UISegmentedControl!
     
     @IBOutlet weak var categoryPicker: UIPickerView!
     
@@ -90,7 +90,7 @@ class ViewController: UIViewController
     /* IBAction Functions */
     @IBAction func moneyInAddPressed(_ sender: Any)
     {
-        let amountString = moneyInTextField.text!
+        let amountString = amountTextField.text!
         var amountFloat = Float(amountString)!
         
         // Make sure it's above 0, since this is income
@@ -101,7 +101,7 @@ class ViewController: UIViewController
     
     @IBAction func moneyOutAddPressed(_ sender: Any)
     {
-        let amountString = moneyInTextField.text!
+        let amountString = amountTextField.text!
         var amountFloat = Float(amountString)!
         
         // Make sure it's under 0, since this is an expense
@@ -190,7 +190,7 @@ extension ViewController: WCSessionDelegate, UITableViewDelegate, UITableViewDat
         case 9:
             selectedCategory = .Other
         default:
-            // Will never get here, but the compiler doesn't know that
+            // We'll never get here, but the compiler doesn't know that
             return
         }
     }
