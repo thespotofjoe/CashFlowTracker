@@ -21,6 +21,45 @@ enum Category
     case Car_Insurance
     case Other
     case Uncategorized
+    
+    static func asString(_ category: Category) -> String
+    {
+        switch category
+        {
+        case Food:
+            return "Food"
+
+        case Gas:
+            return "Gas"
+            
+        case Gym:
+            return "Gas"
+            
+        case Rent:
+            return "Rent"
+            
+        case Utilities:
+            return "Utilities"
+            
+        case Subscriptions:
+            return "Subscriptions"
+            
+        case Toiletries_and_Cleaning_Supplies:
+            return "Toiletries and Cleaning Supplies"
+            
+        case Car_Payments:
+            return "Car Payments"
+            
+        case Car_Insurance:
+            return "Car Insurance"
+            
+        case Other:
+            return "Other"
+            
+        case Uncategorized:
+            return "Uncategorized"
+        }
+    }
 }
 
 class Budget
@@ -129,12 +168,17 @@ class Entry
     // Category
     var category: Category
     
+    // Description
+    var description: String
+    
     /* Initializers */
     // Full initializer
-    init (_ amount: Float, category: Category)
+    init (_ amount: Float, category: Category, description: String)
     {
         // Set self.amount to passed value
         self.amount = amount
+        
+        self.description = description
         
         // Set whether this is an expense or income
         if self.amount < 0

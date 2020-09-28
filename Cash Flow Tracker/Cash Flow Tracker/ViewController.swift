@@ -25,7 +25,7 @@ class ViewController: UIViewController
     @IBOutlet weak var categoryPicker: UIPickerView!
     
     /* Our properties */
-    var entries: [String:[Entry]] = ["expenses":[], "income":[]]
+    var entries: [Entry] = []
     let categories = ["Food", "Gas", "Gym", "Rent", "Utilities", "Subscriptions", "Toiletries and Cleaning Supplies", "Car Payments", "Car Insurance", "Other"]
     var selectedCategory = Category.Uncategorized
     
@@ -33,9 +33,12 @@ class ViewController: UIViewController
     var totalIncome: Float
     {
         var total = Float.zero
-        for incomeEntry in entries["income"]!
+        for entry in entries
         {
-            total = total + incomeEntry
+            if entry.type == .Income
+            {
+                total = total + entry
+            }
         }
         
         return total
@@ -44,9 +47,12 @@ class ViewController: UIViewController
     var totalExpenses: Float
     {
         var total = Float.zero
-        for incomeEntry in entries["expenses"]!
+        for entry in entries
         {
-            total = total + incomeEntry
+            if entry.type == .Expense
+            {
+                total = total + entry
+            }
         }
         
         return total
@@ -96,7 +102,7 @@ class ViewController: UIViewController
         // Make sure it's above 0, since this is income
         if amountFloat < 0 {amountFloat *= -1}
         
-        entries["income"]!.append(Entry(amountFloat, category: selectedCategory))
+        entries.append(Entry(amountFloat, category: selectedCategory))
     }
     
     @IBAction func moneyOutAddPressed(_ sender: Any)
@@ -107,16 +113,16 @@ class ViewController: UIViewController
         // Make sure it's under 0, since this is an expense
         if amountFloat > 0 {amountFloat *= -1}
         
-        entries["expenses"]!.append(Entry(amountFloat, category: selectedCategory))
+        entries.append(Entry(amountFloat, category: selectedCategory))
     }
     
     /* Our Functions */
     func totalForCategory(_ category: Category) -> Float
     {
         var total = Float.zero
-        for expense in entries["expenses"]!
+        for entry in entries
         {
-            if expense.category == category { total -= expense.amount }
+            if entry.category == category { total -= entry.amount }
         }
         
         return total
@@ -133,7 +139,14 @@ extension ViewController: WCSessionDelegate, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath) as! EntryCell
+
+        let entry = entries[indexPath.row]
+        cell.descriptionLabel?.text     = entry.description
+        cell.amountLabel?.text          = entry.amountString
+        cell.categoryLabel?.text        = Category.asString(entry.category)
+
+        return cell
     }
     
     /* Protocol functions */
