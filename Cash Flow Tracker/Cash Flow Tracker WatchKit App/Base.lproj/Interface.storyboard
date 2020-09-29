@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16097.3" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="17156" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="17034"/>
     </dependencies>
     <scenes>
         <!--AddIncomeController-->
@@ -162,8 +163,6 @@
                         </label>
                     </items>
                     <connections>
-                        <outlet property="amountLeftLabel" destination="s78-Nb-wwK" id="YTc-ra-Poe"/>
-                        <outlet property="amountLeftUnitsLabel" destination="cHW-k3-XGS" id="NqE-kD-iVh"/>
                         <outlet property="cashFlowLabel" destination="s78-Nb-wwK" id="xx8-Rm-qx2"/>
                         <outlet property="dateLabel" destination="lUw-Bz-uNV" id="oqa-uv-imU"/>
                     </connections>
