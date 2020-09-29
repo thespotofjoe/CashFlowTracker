@@ -180,6 +180,8 @@ class Entry
         
         self.description = description
         
+        self.category = category
+        
         // Set whether this is an expense or income
         if self.amount < 0
         {

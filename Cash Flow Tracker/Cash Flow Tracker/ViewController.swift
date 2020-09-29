@@ -98,7 +98,7 @@ class ViewController: UIViewController
     {
         let amountString = amountTextField.text!
         let description = descriptionTextField.text!
-        let isIncome: Bool
+        var isIncome = true
         
         // Read the segmented control and note whether this is an expense or income
         switch expenseOrIncome.selectedSegmentIndex
@@ -143,7 +143,7 @@ extension ViewController: WCSessionDelegate, UITableViewDelegate, UITableViewDat
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        <#code#>
+        return entries.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell

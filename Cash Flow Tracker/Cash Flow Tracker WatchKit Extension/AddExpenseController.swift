@@ -50,7 +50,7 @@ class AddExpenseController: WKInterfaceController
     }
     
     // Creates and spits back an Entry from the local amount
-    func makeEntry() -> Entry { return Entry(Float(amount)) }
+    func makeEntry() -> Entry { return Entry(Float(amount), category: .Uncategorized, description: "") }
     
     /* Integral system functions, overridden */
     override func awake(withContext context: Any?)
