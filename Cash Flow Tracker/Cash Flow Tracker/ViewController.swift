@@ -94,26 +94,35 @@ class ViewController: UIViewController
     }
     
     /* IBAction Functions */
-    @IBAction func moneyInAddPressed(_ sender: Any)
+    @IBAction func addPressed(_ sender: Any)
     {
         let amountString = amountTextField.text!
+        let description = descriptionTextField.text!
+        let isIncome: Bool
+        
+        // Read the segmented control and note whether this is an expense or income
+        switch expenseOrIncome.selectedSegmentIndex
+        {
+        case 0:
+            isIncome = true
+        case 1:
+            isIncome = false
+        default:
+            break
+        }
+        
         var amountFloat = Float(amountString)!
         
-        // Make sure it's above 0, since this is income
-        if amountFloat < 0 {amountFloat *= -1}
+        // If it's income, make sure it's positive
+        if isIncome
+        {
+            if amountFloat < 0 {amountFloat *= -1}
+        } else {
+            // Of if it's an expense, make sure it's negative
+            if amountFloat > 0 {amountFloat *= -1}
+        }
         
-        entries.append(Entry(amountFloat, category: selectedCategory))
-    }
-    
-    @IBAction func moneyOutAddPressed(_ sender: Any)
-    {
-        let amountString = amountTextField.text!
-        var amountFloat = Float(amountString)!
-        
-        // Make sure it's under 0, since this is an expense
-        if amountFloat > 0 {amountFloat *= -1}
-        
-        entries.append(Entry(amountFloat, category: selectedCategory))
+        entries.append(Entry(amountFloat, category: selectedCategory, description: description))
     }
     
     /* Our Functions */
