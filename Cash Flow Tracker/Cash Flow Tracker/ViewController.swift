@@ -84,7 +84,7 @@ class ViewController: UIViewController
         let dateTimeComponents = userCalendar.dateComponents(requestedComponents, from: todaysDate)
         
         // Set the text of the label to extracted date
-        dateLabel.text = "\(dateTimeComponents.day!)  \(dateTimeComponents.month!), \(dateTimeComponents.year!)"
+        dateLabel.text = "\(dateTimeComponents.month!)/\(dateTimeComponents.day!)/\(dateTimeComponents.year!)"
         
         // Setup connection to watch app
         if WCSession.isSupported() {

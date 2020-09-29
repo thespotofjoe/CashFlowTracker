@@ -152,12 +152,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="amountTextField" destination="iC2-d1-D56" id="TAN-G7-FLi"/>
                         <outlet property="categoryPicker" destination="bct-bl-fmu" id="ceJ-lD-yjC"/>
                         <outlet property="dateLabel" destination="eaN-tk-efK" id="6YB-nd-IbK"/>
                         <outlet property="descriptionTextField" destination="D9Q-hg-qSR" id="eRG-IP-wJZ"/>
+                        <outlet property="entryTableView" destination="jaM-Zf-LrZ" id="CNP-aS-Occ"/>
                         <outlet property="expenseOrIncome" destination="rXN-a3-SsX" id="r3H-Rt-fsy"/>
-                        <outlet property="moneyInTableView" destination="jaM-Zf-LrZ" id="b2K-DG-tDF"/>
-                        <outlet property="moneyOutTextField" destination="iC2-d1-D56" id="Ukm-4T-C6k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
