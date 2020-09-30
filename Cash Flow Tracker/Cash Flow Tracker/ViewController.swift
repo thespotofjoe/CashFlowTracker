@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import WatchConnectivity
+//import WatchConnectivity
 
 class ViewController: UIViewController
 {
@@ -86,11 +86,14 @@ class ViewController: UIViewController
         // Set the text of the label to extracted date
         dateLabel.text = "\(dateTimeComponents.month!)/\(dateTimeComponents.day!)/\(dateTimeComponents.year!)"
         
-        // Setup connection to watch app
+        categoryPicker.dataSource = self
+        categoryPicker.delegate = self
+        
+        /*// Setup connection to watch app
         if WCSession.isSupported() {
             WCSession.default.delegate = self
             WCSession.default.activate()
-        }
+        }*/
     }
     
     /* IBAction Functions */
@@ -139,7 +142,7 @@ class ViewController: UIViewController
     
 }
 
-extension ViewController: WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource
+extension ViewController: /*WCSessionDelegate,*/ UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -159,7 +162,7 @@ extension ViewController: WCSessionDelegate, UITableViewDelegate, UITableViewDat
     }
     
     /* Protocol functions */
-    // WCSessionDelegate functions
+    /*// WCSessionDelegate functions
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?)
     {
         
@@ -184,7 +187,7 @@ extension ViewController: WCSessionDelegate, UITableViewDelegate, UITableViewDat
         replyHandler(returnMessage)
         
         print("Successfully replied to Watch.")
-    }
+    }*/
     
     // UIPickerViewDelegate functions
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
@@ -219,6 +222,7 @@ extension ViewController: WCSessionDelegate, UITableViewDelegate, UITableViewDat
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
+        print ("Returning \(categories[row]) for row \(row)")
         return categories[row]
     }
     
