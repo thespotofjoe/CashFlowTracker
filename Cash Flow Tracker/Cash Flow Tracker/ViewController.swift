@@ -68,6 +68,11 @@ class ViewController: UIViewController
         super.viewDidLoad()
         
         /* Do any additional setup after loading the view. */
+        // Add tap gesture to dismiss keyboard
+        let keyboardDismiss = UITapGestureRecognizer(target: self.view,
+                                                     action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(keyboardDismiss)
+        
         // Update Date Label
         // Get right now's epochtime
         let todaysDate = Date()
