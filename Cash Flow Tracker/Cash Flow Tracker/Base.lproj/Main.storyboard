@@ -42,7 +42,7 @@
                                     <constraint firstAttribute="height" constant="165" id="E4D-Xl-NDD"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryCell" id="B5Z-jf-Dh9">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryCell" id="B5Z-jf-Dh9" customClass="EntryCell" customModule="Cash_Flow_Tracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B5Z-jf-Dh9" id="bhV-7r-j4P" customClass="EntryCell" customModule="Cash_Flow_Tracker" customModuleProvider="target">
@@ -57,13 +57,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9L4-id-Lna">
-                                                    <rect key="frame" x="271" y="12" width="39" height="21"/>
+                                                    <rect key="frame" x="209" y="12" width="101" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$2.35" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zG1-LY-OcW">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="LabelCell" text="$2.35" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zG1-LY-OcW">
                                                     <rect key="frame" x="125" y="11" width="70" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -75,18 +75,19 @@
                                                 <constraint firstItem="brQ-PZ-Zro" firstAttribute="leading" secondItem="bhV-7r-j4P" secondAttribute="leading" constant="10" id="1AT-Md-N0P"/>
                                                 <constraint firstAttribute="trailing" secondItem="9L4-id-Lna" secondAttribute="trailing" constant="10" id="S9V-Yj-LKu"/>
                                             </constraints>
-                                            <connections>
-                                                <outlet property="amountLabel" destination="zG1-LY-OcW" id="I8w-NG-Wm1"/>
-                                                <outlet property="categoryLabel" destination="9L4-id-Lna" id="aka-W0-mQf"/>
-                                                <outlet property="descriptionLabel" destination="brQ-PZ-Zro" id="zXC-Eq-cqI"/>
-                                            </connections>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="LabelCell"/>
                                         <connections>
                                             <outlet property="amountLabel" destination="zG1-LY-OcW" id="Zfo-1c-zpv"/>
+                                            <outlet property="categoryLabel" destination="9L4-id-Lna" id="mYS-CC-dAr"/>
                                             <outlet property="descriptionLabel" destination="brQ-PZ-Zro" id="fPl-y6-igm"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="RiD-HB-oJC"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="cPN-sr-IJu"/>
+                                </connections>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What did you buy/where's this money from?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D9Q-hg-qSR">
                                 <rect key="frame" x="52" y="459" width="216" height="34"/>

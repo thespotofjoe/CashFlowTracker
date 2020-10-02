@@ -104,6 +104,7 @@ class ViewController: UIViewController
     /* IBAction Functions */
     @IBAction func addPressed(_ sender: Any)
     {
+        print("In addPressed()\nThere are \(entries.count) entries right now.")
         let amountString = amountTextField.text!
         let description = descriptionTextField.text!
         var isIncome = true
@@ -131,6 +132,10 @@ class ViewController: UIViewController
         }
         
         entries.append(Entry(amountFloat, category: selectedCategory, description: description))
+        print("Just appended a new entry. There are now \(entries.count) entries")
+        
+        // Update the table with all the new entries
+        entryTableView.reloadData()
     }
     
     /* Our Functions */
@@ -156,7 +161,7 @@ extension ViewController: /*WCSessionDelegate,*/ UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath) as! EntryCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EntryCell", for: indexPath) as! EntryCell
 
         let entry = entries[indexPath.row]
         cell.descriptionLabel?.text     = entry.description
@@ -227,7 +232,6 @@ extension ViewController: /*WCSessionDelegate,*/ UITableViewDelegate, UITableVie
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
-        print ("Returning \(categories[row]) for row \(row)")
         return categories[row]
     }
     
