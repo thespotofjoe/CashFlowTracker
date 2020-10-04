@@ -62,30 +62,6 @@ class EntryViewController: UIViewController
     {
         super.viewDidLoad()
         
-        /* Do any additional setup after loading the view. */
-        // Add tap gesture to dismiss keyboard
-        let keyboardDismiss = UITapGestureRecognizer(target: self.view,
-                                                     action: #selector(UIView.endEditing))
-        view.addGestureRecognizer(keyboardDismiss)
-        
-        // Update Date Label
-        // Get right now's epochtime
-        let todaysDate = Date()
-        
-        // Get the user's calendar preferences
-        let userCalendar = Calendar.current
-        
-        // Specify which components we want
-        let requestedComponents: Set<Calendar.Component> = [.year,
-            .month,
-            .day]
-        
-        // Extract the components from epochtime
-        let dateTimeComponents = userCalendar.dateComponents(requestedComponents, from: todaysDate)
-        
-        // Set the text of the label to extracted date
-        dateLabel.text = "\(dateTimeComponents.month!)/\(dateTimeComponents.day!)/\(dateTimeComponents.year!)"
-        
         categoryPicker.dataSource = self
         categoryPicker.delegate = self
         

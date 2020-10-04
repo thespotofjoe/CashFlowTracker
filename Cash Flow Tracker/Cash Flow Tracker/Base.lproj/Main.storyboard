@@ -17,12 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bct-bl-fmu">
-                                <rect key="frame" x="0.0" y="163" width="320" height="123"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="123" id="d1e-h3-goE"/>
-                                </constraints>
-                            </pickerView>
                             <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What did you buy/where's this money from?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D9Q-hg-qSR">
                                 <rect key="frame" x="52" y="352" width="216" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -53,6 +47,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bct-bl-fmu">
+                                <rect key="frame" x="0.0" y="144" width="320" height="123"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="123" id="d1e-h3-goE"/>
+                                </constraints>
+                            </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Uee-0j-aNJ"/>
                         <color key="backgroundColor" red="0.043550532310000001" green="0.044792778790000001" blue="0.056164994840000003" alpha="1" colorSpace="deviceRGB"/>
