@@ -1,28 +1,23 @@
 //
-//  ViewController.swift
+//  EntryViewController.swift
 //  Daily Goal Tracker
 //
-//  Created by Joseph Buchoff on 9/4/20.
+//  Created by Joseph Buchoff on 10/3/20.
 //  Copyright © 2020 Joe's Studio. All rights reserved.
 //
 
+import Foundation
 import UIKit
 //import WatchConnectivity
 
-class ViewController: UIViewController
+class EntryViewController: UIViewController
 {
     /* Outlets */
-    @IBOutlet weak var dateLabel: UILabel!
-    
     @IBOutlet weak var entryTableView: UITableView!
     
-    @IBOutlet weak var amountTextField: UITextField!
-    
-    @IBOutlet weak var descriptionTextField: UITextField!
-    
-    @IBOutlet weak var expenseOrIncome: UISegmentedControl!
-    
     @IBOutlet weak var categoryPicker: UIPickerView!
+    
+    @IBOutlet weak var amountLabel: UILabel!
     
     /* Our properties */
     var entries: [Entry] = []
@@ -101,42 +96,7 @@ class ViewController: UIViewController
         }*/
     }
     
-    /* IBAction Functions */
-    @IBAction func addPressed(_ sender: Any)
-    {
-        print("In addPressed()\nThere are \(entries.count) entries right now.")
-        let amountString = amountTextField.text!
-        let description = descriptionTextField.text!
-        var isIncome = true
-        
-        // Read the segmented control and note whether this is an expense or income
-        switch expenseOrIncome.selectedSegmentIndex
-        {
-        case 0:
-            isIncome = true
-        case 1:
-            isIncome = false
-        default:
-            break
-        }
-        
-        var amountFloat = Float(amountString)!
-        
-        // If it's income, make sure it's positive
-        if isIncome
-        {
-            if amountFloat < 0 {amountFloat *= -1}
-        } else {
-            // Of if it's an expense, make sure it's negative
-            if amountFloat > 0 {amountFloat *= -1}
-        }
-        
-        entries.append(Entry(amountFloat, category: selectedCategory, description: description))
-        print("Just appended a new entry. There are now \(entries.count) entries")
-        
-        // Update the table with all the new entries
-        entryTableView.reloadData()
-    }
+    
     
     /* Our Functions */
     func totalForCategory(_ category: Category) -> Float
@@ -152,7 +112,7 @@ class ViewController: UIViewController
     
 }
 
-extension ViewController: /*WCSessionDelegate,*/ UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource
+extension EntryViewController: /*WCSessionDelegate,*/ UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
