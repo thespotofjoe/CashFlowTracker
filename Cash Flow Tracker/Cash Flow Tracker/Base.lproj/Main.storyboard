@@ -12,7 +12,7 @@
         <!--Add Entry Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="AddEntryController" customModule="Cash_Flow_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VC3" id="BYZ-38-t0r" customClass="AddEntryController" customModule="Cash_Flow_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -91,7 +91,7 @@
         <!--Entry View Controller-->
         <scene sceneID="Vf6-oe-RZx">
             <objects>
-                <viewController id="iRB-2u-c9M" customClass="EntryViewController" customModule="Cash_Flow_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VC2" id="iRB-2u-c9M" customClass="EntryViewController" customModule="Cash_Flow_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dBE-As-zJg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -187,7 +187,7 @@
         <!--Cash Flow Controller-->
         <scene sceneID="dBW-Za-I4Z">
             <objects>
-                <viewController id="99n-PA-jNv" customClass="CashFlowController" customModule="Cash_Flow_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VC1" id="99n-PA-jNv" customClass="CashFlowController" customModule="Cash_Flow_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fta-u6-DnI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
