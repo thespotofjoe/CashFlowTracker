@@ -45,8 +45,16 @@ class AddEntryController: UIViewController
     /* IBAction Functions */
     @IBAction func addPressed(_ sender: Any)
     {
+
         print("In addPressed()\nThere are \(entries.count) entries right now.")
         let amountString = amountTextField.text!
+        guard let amountFloatConstant = Float(amountString) else
+        {
+            return
+        }
+        
+        var amountFloat = amountFloatConstant
+        
         let description = descriptionTextField.text!
         var isIncome = true
         
@@ -61,8 +69,6 @@ class AddEntryController: UIViewController
             break
         }
         
-        var amountFloat = Float(amountString)!
-        
         // If it's income, make sure it's positive
         if isIncome
         {
@@ -72,7 +78,9 @@ class AddEntryController: UIViewController
             if amountFloat > 0 {amountFloat *= -1}
         }
         
-        entries.append(Entry(amountFloat, category: selectedCategory, description: description))
+        entries.append(Entry(amountFloat,
+                             category: selectedCategory,
+                             description: description))
         print("Just appended a new entry. There are now \(entries.count) entries")
     }
 }
